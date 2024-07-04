@@ -56,4 +56,14 @@ class GroupModel extends BaseModel
 
         return $found;
     }
+
+    public function getGroupsForName(int $userId)
+    {
+        if (null === $found = cache("{$userId}_groups")) {
+            $found = $this->join('auth_groups_users', 'auth_groups_users.group_id = auth_groups.id', 'RIGHT')
+            ->where('user_id', $userId)->first();
+            cache()->save("{$userId}_groups", $found, 300);
+        }
+        return $found;
+    }
 }

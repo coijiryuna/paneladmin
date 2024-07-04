@@ -1,4 +1,4 @@
-# CodeIgniter 4 Application Starter
+# CodeIgniter 4 Boilerplate
 
 ## What is CodeIgniter?
 
@@ -11,17 +11,49 @@ It has been built from the
 
 More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+The user guide corresponding to the latest version of the framework can be found
+[here](https://codeigniter4.github.io/userguide/).
 
 ## Installation & updates
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
+`git clone https://github.com/coijiryuna/codeadmin.git` then `composer update` whenever
 there is a new release of the framework.
 
 When updating, check the release notes to see if there are any changes you might need to apply
 to your `app` folder. The affected files can be copied or merged from
 `vendor/codeigniter4/framework/app`.
+
+## Langkah
+`php spark migrate -all`
+
+`php spark db:seed BoilerplateSeeder`
+
+`gunakan myth.zip hapus folder myth pada folder vendor ganti dengan hasil extrak file myth.zip`
+
+```
+Default user and password
++----+--------+-------------+
+| No | User   | Password    |
++----+--------+-------------+
+| 1  | admin  | super-admin |
+| 2  | user   | super-user  |
++----+--------+-------------+
+```
+
+##Feature
+-------
+* Configurable backend theme [AdminLTE 3](https://adminlte.io/docs/3.0/)
+* CSS framework [Bootstrap 4](https://getbootstrap.com/)
+* Icons by [Font Awesome 4](https://fontawesome.com/)
+* Role-based permissions (RBAC) provided by [Myth/Auth](https://github.com/lonnieezell/myth-auth)
+* Dynamically-Generated Menu
+* Localized English / Indonesian
+* Helper onGroup mendapatkan nama group admin atau group lainnya
+* Example untuk helper nama group:
+`onGroup()->name; return string 'nameGroup' `
+`example: 'admin' or 'member' or other 'namagropup' `
+
+This project is still early in its development... please feel free to contribute!
 
 ## Setup
 
@@ -50,16 +82,15 @@ Problems with it can be raised on our forum, or as issues in the main repository
 
 ## Server Requirements
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+PHP version 7.4 or higher is required, with the following extensions installed:
 
 - [intl](http://php.net/manual/en/intl.requirements.php)
 - [mbstring](http://php.net/manual/en/mbstring.installation.php)
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+> **Warning**
+> The end of life date for PHP 7.4 was November 28, 2022. If you are
+> still using PHP 7.4, you should upgrade immediately. The end of life date
+> for PHP 8.0 will be November 26, 2023.
 
 Additionally, make sure that the following extensions are enabled in your PHP:
 
